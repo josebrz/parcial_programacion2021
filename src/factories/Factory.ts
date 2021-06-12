@@ -1,5 +1,5 @@
-import { Character }  from "../character/Character";
-import { Weapon }  from "../weapon/Weapon";
+import { Character }  from "../objects_game/character/Character";
+import { Weapon }  from "../objects_game/weapon/Weapon";
 import { FactoryCharacter }  from "./FactoryCharacter";
 import { FactoryWeapon }  from "./FactoryWeapon";
 

@@ -1,7 +1,7 @@
-import {MagicWarrior}  from "../character/MagicWarrior";
-import {MeleeWarrior}  from "../character/MeleeWarrior";
-import {TankWarrior}  from "../character/TankWarrior";
-import { Character } from "../character/Character";
+import {MagicWarrior}  from "../objects_game/character/MagicWarrior";
+import {MeleeWarrior}  from "../objects_game/character/MeleeWarrior";
+import {TankWarrior}  from "../objects_game/character/TankWarrior";
+import { Character } from "../objects_game/character/Character";
 
 export class FactoryCharacter {
     public static create(type: string): Character{

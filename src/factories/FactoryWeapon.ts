@@ -1,12 +1,12 @@
-import {Dagger}  from "../weapon/Dagger";
-import {Sword}  from "../weapon/Sword";
-import {Wand}  from "../weapon/Wand";
-import { Weapon } from "../weapon/Weapon";
+import { Hammer }  from "../objects_game/weapon/Hammer";
+import { Sword }  from "../objects_game/weapon/Sword";
+import { Wand }  from "../objects_game/weapon/Wand";
+import { Weapon } from "../objects_game/weapon/Weapon";
 
 export class FactoryWeapon {
     public static create(type: string): Weapon {
-        if(type === "Dagger"){
-            return new Dagger()
+        if(type === "Hammer"){
+            return new Hammer()
         }
         else if(type === "Sword"){
             return new Sword()

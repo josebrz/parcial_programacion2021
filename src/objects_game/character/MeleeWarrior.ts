@@ -1,7 +1,11 @@
 import {Character} from './Character';
 import {Sword} from '../weapon/Sword';
+import { Weapon } from '../weapon/Weapon';
 
 export class MeleeWarrior extends Character{
+    public addWeapon(weapon: Weapon): void {
+        throw new Error('Method not implemented.');
+    }
     private sword: Sword;
     
     constructor(){

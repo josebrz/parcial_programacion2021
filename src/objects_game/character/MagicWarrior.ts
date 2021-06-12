@@ -1,7 +1,11 @@
 import {Character} from './Character';
 import {Wand} from '../weapon/Wand';
+import { Weapon } from '../weapon/Weapon';
 
 export class MagicWarrior extends Character{
+    public addWeapon(weapon: Weapon): void {
+        throw new Error('Method not implemented.');
+    }
     private wand: Wand;
 
     constructor(){

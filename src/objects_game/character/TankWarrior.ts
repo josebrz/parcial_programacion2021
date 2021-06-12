@@ -1,8 +1,12 @@
 import {Character} from './Character';
 import {Hammer} from '../weapon/Hammer';
+import { Weapon } from '../weapon/Weapon';
 
 
 export class TankWarrior  extends Character{
+    public addWeapon(weapon: Weapon): void {
+        throw new Error('Method not implemented.');
+    }
     private hammer: Hammer;
 
     constructor(){
