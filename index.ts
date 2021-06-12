@@ -1,7 +1,7 @@
-import {MagicWarrior}  from "./character/MagicWarrior";
-import {MeleeWarrior}  from "./character/MeleeWarrior";
-import {TankWarrior}  from "./character/TankWarrior";
-import {Character}  from "./character/Character";
+import {MagicWarrior}  from "./src/objects_game/character/MagicWarrior";
+import {MeleeWarrior}  from "./src/objects_game/character/MeleeWarrior";
+import {TankWarrior}  from "./src/objects_game/character/TankWarrior";
+import {Character}  from "./src/objects_game/character/Character";
 import * as readline from "readline";
 
 console.log("\t-----------------------------------");
