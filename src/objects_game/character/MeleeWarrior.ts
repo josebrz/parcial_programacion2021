@@ -27,14 +27,18 @@ export class MeleeWarrior extends Character{
         return attack;
     }
 
-    defend(attackPoints: number, enemy: Character): void {
+    defend(attackPoints: number, enemy: Character): number {
+        let remainingLife: number;
         if(this.armor >= attackPoints){
             this.armor -= attackPoints
-            this.life -= attackPoints / 3
+            remainingLife = attackPoints / 3
+            this.life -= remainingLife
         }
         else{
-            this.life -= attackPoints - this.armor
+            remainingLife = attackPoints - this.armor
+            this.life -= remainingLife
             this.armor = 0
         }
+        return remainingLife
     }
 }

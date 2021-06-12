@@ -27,14 +27,18 @@ export class MagicWarrior extends Character{
         return attack;
 }
     
-    defend(attackPoints: number, enemy: Character): void {
+    defend(attackPoints: number, enemy: Character): number {
+        let remainingLife: number;
         if(this.armor >= attackPoints){
             this.armor -= attackPoints
-            this.life -= attackPoints / 4
+            remainingLife = attackPoints / 4
+            this.life -= remainingLife
         }
         else{
-            this.life -= attackPoints - this.armor
+            remainingLife = attackPoints - this.armor
+            this.life -= remainingLife
             this.armor = 0
         }
+        return remainingLife
     }
 }
