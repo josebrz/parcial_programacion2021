@@ -4,9 +4,6 @@ import { Weapon } from '../weapon/Weapon';
 
 
 export class TankWarrior  extends Character{
-    public addWeapon(weapon: Weapon): void {
-        throw new Error('Method not implemented.');
-    }
     private hammer: Hammer;
 
     constructor(){
@@ -14,6 +11,10 @@ export class TankWarrior  extends Character{
         this.hammer = new Hammer();
     }
 
+    public addWeapon(weapon: Weapon): void {
+        this.weapon = weapon;
+    }
+    
     attack(personaje: Character): number {
         let attack: number = 0;
         if(personaje.constructor.name != this.weakness){

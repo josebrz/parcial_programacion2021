@@ -3,14 +3,15 @@ import {Sword} from '../weapon/Sword';
 import { Weapon } from '../weapon/Weapon';
 
 export class MeleeWarrior extends Character{
-    public addWeapon(weapon: Weapon): void {
-        throw new Error('Method not implemented.');
-    }
     private sword: Sword;
     
     constructor(){
         super(1300, 1500, 1000, 'TankWarrior')
         this.sword = new Sword()
+    }
+
+    public addWeapon(weapon: Weapon): void {
+        this.weapon = weapon;
     }
 
     public attack(personaje: Character): number {
