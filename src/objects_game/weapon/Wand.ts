@@ -3,30 +3,39 @@ import {Weapon}  from "./Weapon";
 export class Wand extends Weapon {
     constructor() {
         super(300, 3000)
+        this.name = "Wand";
     }
 
     basicAttack(){
-        this.durability -= 10
-        return this.attackPower
+        if (this.durability > 0) {
+            this.durability -= 10
+            return this.attackPower * this.effectiveness
+        } else {
+            return 0
+        }
+        
     }
 
     specialAttack(){
-        this.durability -= 30
-        return this.attackPower + Math.random() * 2500
+        if (this.durability > 0) {
+            this.durability -= 30
+            let attack: number = 0;
+
+            const random = Math.floor(Math.random() * 2);
+            if (random === 1) {
+                this.magicAttack()
+            }
+
+            attack = this.attackPower + Math.random() * 2500;
+            return attack
+        } else {
+            return 0
+        }
+        
+    }
+    
+    private magicAttack(): number{
+        return Math.random() * 500;
     }
 
-}
-
-
-// public specialAttack() {
-//     let attack: number
-//     attack = Math.floor(Math.random() * 2);
-//     attack *= this.attackPower
-//     if (attack === 2) {
-//         this.magicAttack()
-//     }
-// }
-//
-// private magicAttack(): number{
-//     return 3;
-// }
+}    

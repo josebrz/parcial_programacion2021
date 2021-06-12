@@ -1,4 +1,7 @@
 export abstract class Weapon {
+    public effectiveness: number = 1;
+    public name: string = "";
+
     protected constructor(
         protected attackPower: number,
         public durability: number

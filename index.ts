@@ -49,7 +49,8 @@ promiseInput(
     ), createEnemyBackground()])
     .then((result: any[]) => {
       // Realizamos destructuring en los resultados de las promeasas
-      const [weaponReturn, enemyReturn] = result
+      let weaponReturn: Weapon, enemyReturn: Character;
+      [weaponReturn, enemyReturn] = result
 
       warriorReturn.addWeapon(weaponReturn);
       console.log("\t\tTU PERSONAJE ES:");
