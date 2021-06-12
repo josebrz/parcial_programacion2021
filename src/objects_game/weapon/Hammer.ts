@@ -4,12 +4,12 @@ export class Hammer extends Weapon {
     constructor() {
         super(2000, 2300);
     }
-    basicAttack(){
+    basicAttack():number{
         this.durability -= 30
         return this.attackPower
     }
-    specialAttack(){
+    specialAttack():number{
         this.durability -= 200
-        return this.attackPower * Math.random() * 220
+        return this.attackPower + Math.random() * 220
     }
 }
