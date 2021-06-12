@@ -1,12 +1,10 @@
 import {Character} from './Character';
-import {Hammer} from '../weapon/Hammer';
 import { Weapon } from '../weapon/Weapon';
 
 
 export class TankWarrior  extends Character{
-
     constructor(){
-        super(3500, 600, 5000,'MagicWarrior')
+        super(3500, 600, 5000,'MagicWarrior', 'TankWarrior')
     }
 
     public addWeapon(weapon: Weapon): void {
@@ -28,9 +26,19 @@ export class TankWarrior  extends Character{
             }
         }
         return attack;
-    }  
-    public defend(attackPoints: number): void {
-        throw new Error("Method not implemented.");
     }
 
+    defend(attackPoints: number, enemy: Character): void {
+        if(this.armor >= attackPoints){
+            this.armor -= attackPoints
+            this.life -= attackPoints / 15
+        }
+        else{
+            this.life -= attackPoints - this.armor
+            this.armor = 0
+        }
+        if(['Sword', 'Hammer'].includes(enemy.weapon.name) && enemy.name != 'TankWarrior'){
+            enemy.defend(attackPoints/5, this)
+        }
+    }
 }

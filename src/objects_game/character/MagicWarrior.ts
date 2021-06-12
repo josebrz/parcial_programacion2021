@@ -3,7 +3,7 @@ import { Weapon } from '../weapon/Weapon';
 
 export class MagicWarrior extends Character{
     constructor(){
-        super(1750, 800, 1000, 'MeleeWarrior')
+        super(1750, 800, 1000, 'MeleeWarrior', 'MagicWarrior')
     }
     
     public addWeapon(weapon: Weapon): void {
@@ -25,9 +25,16 @@ export class MagicWarrior extends Character{
             }
         }
         return attack;
-    }
+}
     
-    defend(attackPoints: number): void {
-        throw new Error("Method not implemented.");
+    defend(attackPoints: number, enemy: Character): void {
+        if(this.armor >= attackPoints){
+            this.armor -= attackPoints
+            this.life -= attackPoints / 4
+        }
+        else{
+            this.life -= attackPoints - this.armor
+            this.armor = 0
+        }
     }
 }
