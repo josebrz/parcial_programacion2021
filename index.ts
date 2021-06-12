@@ -1,19 +1,8 @@
-
-// Parcial de programacion. Alumnos: Conil Nicolas, Brizuela José, Catalano Nico Puto
 import {MagicWarrior}  from "./character/MagicWarrior";
 import {MeleeWarrior}  from "./character/MeleeWarrior";
 import {TankWarrior}  from "./character/TankWarrior";
 import {Character}  from "./character/Character";
-import {Weapon} from "./weapon/Weapon";
 import * as readline from "readline";
-
-// const arma = new Weapon(50, 4);
-
-// const mago = new MagicWarrior()
-// const cuerpoAcuerpo = new MeleeWarrior();
-// const tanque = new TankWarrior();
-// tanque.attack(mago)
-// tanque.attack(cuerpoAcuerpo)
 
 console.log("\t-----------------------------------");
 console.log("\t------ SUPER CESIT GAME  ----------");

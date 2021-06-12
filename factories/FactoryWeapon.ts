@@ -1,6 +1,6 @@
-import {Hammer}  from "./Hammer";
-import {Sword}  from "./Sword";
-import {Wand}  from "./Wand";
+import {Hammer}  from "../weapon/Hammer";
+import {Sword}  from "../weapon/Sword";
+import {Wand}  from "../weapon/Wand";
 
 export class FactoryCharacter {
     public static createCharacter(type: string){
