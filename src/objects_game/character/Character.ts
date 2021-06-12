@@ -1,13 +1,13 @@
 import {Weapon} from '../weapon/Weapon';
 
 export abstract class Character{
-    protected weapon: Weapon;  
+    protected weapon: Weapon | undefined
 
     protected constructor(
-      protected lifetimes: number,
+      protected life: number,
       protected attackPower: number,
       protected armor: number,
-      protected weakness: string
+      protected weakness: string,
     ){}
     
     public abstract addWeapon(weapon: Weapon): void;

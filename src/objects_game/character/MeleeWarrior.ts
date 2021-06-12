@@ -1,13 +1,9 @@
 import {Character} from './Character';
-import {Sword} from '../weapon/Sword';
 import { Weapon } from '../weapon/Weapon';
 
 export class MeleeWarrior extends Character{
-    private sword: Sword;
-    
     constructor(){
         super(1300, 1500, 1000, 'TankWarrior')
-        this.sword = new Sword()
     }
 
     public addWeapon(weapon: Weapon): void {
@@ -15,14 +11,18 @@ export class MeleeWarrior extends Character{
     }
 
     public attack(personaje: Character): number {
-        let attack: number;
+        let attack: number = 0;
         if(personaje.constructor.name != this.weakness){
-            attack = this.sword.basicAttack();
-            attack += this.attackPower;   
+            if(this.weapon) {
+                attack = this.weapon.attack();
+                attack += this.attackPower;
+            }
         }
         else{
-            attack = this.sword.basicAttack();
-            attack += this.attackPower / 3;
+            if(this.weapon) {
+                attack = this.weapon.attack();
+                attack += this.attackPower / 3;
+            }
         }
         return attack;
     } 

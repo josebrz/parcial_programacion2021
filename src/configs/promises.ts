@@ -11,7 +11,7 @@ export const promiseInput = (
     type: string,
     case1: string,
     case2: string,
-    case3: string): Pronise<any> => {
+    case3: string): Promise<any> => {
 
     return new Promise((resolve: any, reject: any) => {
         let question = readline.createInterface({

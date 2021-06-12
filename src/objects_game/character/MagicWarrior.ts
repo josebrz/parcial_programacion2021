@@ -1,13 +1,9 @@
 import {Character} from './Character';
-import {Wand} from '../weapon/Wand';
 import { Weapon } from '../weapon/Weapon';
 
 export class MagicWarrior extends Character{
-    private wand: Wand;
-
     constructor(){
         super(1750, 800, 1000, 'MeleeWarrior')
-        this.wand = new Wand()
     }
     
     public addWeapon(weapon: Weapon): void {
@@ -15,14 +11,18 @@ export class MagicWarrior extends Character{
     }
 
     public attack(personaje: Character): number {
-        let attack: number;
+        let attack: number = 0;
         if(personaje.constructor.name != this.weakness){
-            attack = this.wand.basicAttack();
-            attack += this.attackPower;   
+            if(this.weapon){
+                attack = this.weapon.attack();
+                attack += this.attackPower;
+            }
         }
         else{
-            attack = this.wand.basicAttack();
-            attack += this.attackPower / 1.5;
+            if(this.weapon){
+                attack = this.weapon.attack();
+                attack += this.attackPower / 1.5;
+            }
         }
         return attack;
     }
