@@ -42,11 +42,10 @@ export const promiseInput = (
 
 export const createEnemyBackground = () => {
     return new Promise((resolve: any, reject: any) => {
-        const randomWarrior = Math.floor(Math.random() * 2);
-        const randomWeapon = Math.floor(Math.random() * 2);
+        const randomWarrior = Math.floor(Math.random() * 3);
+        const randomWeapon = Math.floor(Math.random() * 3);
         let weaponEnemy: Weapon;
         let warriorEnemy: Character;
-
         switch (randomWarrior) {
             case 0:
                 warriorEnemy = FactoryCharacter.create("MagicWarrior");
