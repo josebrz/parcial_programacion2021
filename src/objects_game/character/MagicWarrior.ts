@@ -1,5 +1,6 @@
 import {Character} from './Character';
 import { Weapon } from '../weapon/Weapon';
+import {Wand} from "../weapon/Wand";
 
 export class MagicWarrior extends Character{
     constructor(){
@@ -7,7 +8,8 @@ export class MagicWarrior extends Character{
     }
     
     public addWeapon(weapon: Weapon): void {
-        this.weapon = weapon;
+        this.weapon = weapon
+        this.weapon.effectiveness = this.weapon.name == 'Wand' ? 1 : this.weapon.name == 'Sword' ? 0.6 : 0.3
     }
 
     public attack(personaje: Character): number {

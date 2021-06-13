@@ -6,7 +6,6 @@ export class Sword extends Weapon {
         this.name = "Sword";
     }
 
-
     basicAttack():number{
         if (this.durability > 0) {
             this.durability -= 50
