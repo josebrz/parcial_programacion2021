@@ -12,7 +12,7 @@ export class MeleeWarrior extends Character{
 
     public attack(personaje: Character): number {
         let attack: number = 0;
-        if(personaje.constructor.name != this.weakness){
+        if(personaje.name != this.weakness){
             if(this.weapon) {
                 attack = this.weapon.attack();
                 attack += this.attackPower;

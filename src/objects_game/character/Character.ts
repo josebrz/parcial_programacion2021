@@ -6,11 +6,11 @@ export abstract class Character{
     public weapon: Weapon
     public totalLife: number
 
-    protected constructor(
+    constructor(
       public life: number,
       protected attackPower: number,
       public armor: number,
-      protected weakness: string,
+      public weakness: string,
       public name: string,
     ){
         this.totalLife = this.life

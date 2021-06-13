@@ -10,9 +10,10 @@ console.log("\t------ SUPER CESIT GAME  ----------");
 console.log("\t-----------------------------------");
 
 let warrior: Character;
+let numberAttack: number = 1;
 
 const app = async () => {
-  try{
+  try {
 
     warrior = await promiseInput(
       "\nPor favor eleguir un personaje. Ingresar solo el nº",
@@ -21,31 +22,65 @@ const app = async () => {
       "MagicWarrior",
       "MeleeWarrior",
       "TankWarrior")
-    console.log(warrior);
 
-    const weapon = await promiseInput(
+    let weapon: any, enemy: any;
+    [weapon, enemy] = await Promise.all([promiseInput(
       "\nPor favor eleguir un arma para su personaje. Ingresar solo el nº",
       "1 - Martillo\n2 - Espada\n3 - Varita Magica\n\n>>> ",
       "Weapon",
       "Hammer",
       "Sword",
-      "Wand")
+      "Wand"), createEnemyBackground()])
 
-    const enemy: any = await createEnemyBackground()
-    warrior.addWeapon(enemy);
+
+    warrior.addWeapon(weapon);
     console.log("\t\tTU PERSONAJE ES:");
     console.info(warrior);
     console.log("\t\tPELIARA CONTRA:");
     console.log(enemy);
 
+    while (warrior.life > 0 && enemy.life > 0) {
+
+      console.log("\n\t ----------------- ATAQUE Nº " + numberAttack + " -----------------\n");
+      numberAttack++;
+
+      let atack = warrior.attack(enemy)
+      console.log(`Tu personaje genero un ataque de ${atack}`);
+
+      let lifeSubtracted: number = enemy.defend(atack, warrior);
+      console.log(`El enemigo quedo con una vida de ${Math.floor(enemy.life)}/${enemy.totalLife} debido al último ataque que le resto ${lifeSubtracted}.`);
+      
+      if(enemy.life <= 0){
+        break
+      }else{
+        console.log("\n\t ----------------- ATAQUE Nº " + numberAttack + " -----------------\n");
+        numberAttack++;
+  
+        atack = enemy.attack(warrior)
+        console.log(`El enemigo genero un ataque de ${atack}`);
+  
+        lifeSubtracted = warrior.defend(atack, enemy);
+        console.log(`Tu personaje quedo con una vida de ${Math.floor(warrior.life)}/${warrior.totalLife} debido al último ataque que le resto ${lifeSubtracted}.`);
+      }
+    }
+    if(enemy.life <= 0){
+      console.log("\n\t -------- FELIDADES GANASTE!!! --------");
+      console.log("Tus personaje termino de la siguiente manera:");
+      console.log(warrior);
+
+    }else{
+      console.log("\n\t -------- LO SENTIMOS PERO PERDISTE!!! --------");
+      console.log("Tus personaje termino de la siguiente manera:");
+      console.log(warrior);
+    }
 
 
 
-  }catch (error){
-    console.error(error.message);
+  } catch (error) {
+    console.error(error);
     console.log("Fin del Juego");
   }
-  
+
 }
 app();
 
@@ -81,8 +116,8 @@ app();
 //       //   console.log(res)
 //       // })
 //       pelea(warriorReturn, enemyReturn)
-      
-      
+
+
 //       // while (warriorReturn.life >= 0 && enemyReturn.life >= 0) {
 //       //   // ATACK ONE
 //       //   let atack = warriorReturn.attack(enemyReturn)
@@ -100,28 +135,28 @@ app();
 //       // }
 
 //         // setInterval(() => {
-           
+
 
 //         //     setInterval(() => {
 //         //         const atack = enemyReturn.attack(warriorReturn)
 //         //         console.log(`El personaje ${enemyReturn.name} genero un ataque de ${atack}`);
-    
+
 //         //         const lifeSubtracted: number = warriorReturn.defend(atack, enemyReturn);
 //         //         console.log(`El personaje ${warriorReturn.name} quedo con una vida de ${warriorReturn.life}/${warriorReturn.totalLife} debido al último ataque que le resto ${lifeSubtracted}.`);
-                
+
 //         //     }, 200);
 
 //         // }, 200);
 
-        
-      
-      
+
+
+
 //     })
 //     .catch((error: string) => {
 //       console.error(error);
 //       console.log("Fin del Juego")
 //     })
-  
+
 //   })
 
 //   .catch((error: string) => {
