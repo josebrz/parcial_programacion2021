@@ -1,5 +1,6 @@
 // Parcial de programacion. Alumnos: Conil Nicolas, Brizuela José, Catalano Nico
 import { promiseInput, createEnemyBackground } from "./src/configs/promises";
+import { pelea } from "./src/menu";
 import { Character } from "./src/objects_game/character/Character";
 import { Weapon } from "./src/objects_game/weapon/Weapon";
 
@@ -57,6 +58,24 @@ promiseInput(
       console.info(warriorReturn);
       console.log("\t\tPELIARA CONTRA:");
       console.log(enemyReturn);
+
+      // pelea(warriorReturn, enemyReturn);
+      setInterval(() => {
+        const atack = warriorReturn.attack(enemyReturn)
+        console.log(`El personaje ${warriorReturn.name} genero un ataque de ${atack}`);
+
+        const lifeSubtracted: number = enemyReturn.defend(atack, warriorReturn);
+        console.log(`El personaje ${enemyReturn.name} quedo con una vida de ${enemyReturn.life}/${enemyReturn.totallife} debido al último ataque que le resto ${lifeSubtracted}.`)3
+
+        setInterval(() => {
+            const atack = enemyReturn.attack(warriorReturn)
+            console.log(`El personaje ${enemyReturn.name} genero un ataque de ${atack}`);
+
+            const lifeSubtracted: number = warriorReturn.defend(atack, enemyReturn);
+            console.log(`El personaje ${warriorReturn.name} quedo con una vida de ${warriorReturn.life}/${warriorReturn.totallife} debido al último ataque que le resto ${lifeSubtracted}.`)
+        }, 200);
+
+      }, 200);
       
     })
     .catch((error: string) => {
