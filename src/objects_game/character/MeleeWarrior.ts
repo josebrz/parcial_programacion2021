@@ -8,6 +8,7 @@ export class MeleeWarrior extends Character{
 
     public addWeapon(weapon: Weapon): void {
         this.weapon = weapon;
+        this.weapon.effectiveness = this.weapon.name == 'Sword' ? 1 : this.weapon.name == 'Wand' ? 0.1 : 0.8
     }
 
     public attack(personaje: Character): number {
