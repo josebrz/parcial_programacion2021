@@ -4,7 +4,7 @@ import { Weapon } from '../weapon/Weapon';
 
 export class TankWarrior  extends Character{
     constructor(){
-        super(3500, 600, 5000,'MagicWarrior', 'TankWarrior')
+        super(35_000, 600, 5000,'MagicWarrior', 'TankWarrior')
     }
 
     public addWeapon(weapon: Weapon): void {

@@ -3,7 +3,7 @@ import { Weapon } from '../weapon/Weapon';
 
 export class MeleeWarrior extends Character{
     constructor(){
-        super(1300, 1500, 1000, 'TankWarrior', 'MeleeWarrior')
+        super(13_000, 1500, 1000, 'TankWarrior', 'MeleeWarrior')
     }
 
     public addWeapon(weapon: Weapon): void {
