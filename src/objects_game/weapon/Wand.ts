@@ -26,12 +26,11 @@ export class Wand extends Weapon {
                 this.magicAttack()
             }
 
-            attack = this.attackPower + Math.random() * 2500;
+            attack = this.attackPower + Math.random() * 6000;
             return attack
         } else {
             return 0
         }
-        
     }
     
     private magicAttack(): number{
