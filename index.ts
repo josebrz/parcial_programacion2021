@@ -16,7 +16,7 @@ const app = async () => {
   try {
 
     warrior = await promiseInput(
-      "\nPor favor eleguir un personaje. Ingresar solo el nº",
+      "\nPor favor elegir un personaje. Ingresar solo el nº",
       "1 - Mago\n2 - Luchador cuerpo a cuerpo\n3 - Tanque\n\n>>> ",
       "Character",
       "MagicWarrior",
@@ -25,7 +25,7 @@ const app = async () => {
 
     let weapon: any, enemy: any;
     [weapon, enemy] = await Promise.all([promiseInput(
-      "\nPor favor eleguir un arma para su personaje. Ingresar solo el nº",
+      "\nPor favor elegir un arma para su personaje. Ingresar solo el nº",
       "1 - Martillo\n2 - Espada\n3 - Varita Magica\n\n>>> ",
       "Weapon",
       "Hammer",
@@ -36,7 +36,7 @@ const app = async () => {
     warrior.addWeapon(weapon);
     console.log("\t\tTU PERSONAJE ES:");
     console.info(warrior);
-    console.log("\t\tPELIARA CONTRA:");
+    console.log("\t\tPELEARA CONTRA:");
     console.log(enemy);
 
     while (warrior.life > 0 && enemy.life > 0) {
