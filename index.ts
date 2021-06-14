@@ -1,6 +1,5 @@
 // Parcial de programacion. Alumnos: Conil Nicolas, Brizuela José, Catalano Nico
 import { promiseInput, createEnemyBackground } from "./src/configs/promises";
-import { pelea, peleaPromise } from "./src/pelea";
 import { Character } from "./src/objects_game/character/Character";
 import { Weapon } from "./src/objects_game/weapon/Weapon";
 
