@@ -44,10 +44,10 @@ const app = async () => {
       numberAttack++;
 
       let atack = warrior.attack(enemy)
-      console.log(`Tu personaje genero un ataque de ${atack}`);
+      console.log(`Tu personaje genero un ataque de ${Math.floor(atack)}`);
 
       let lifeSubtracted: number = enemy.defend(atack, warrior);
-      console.log(`El enemigo quedo con una vida de ${Math.floor(enemy.life)}/${enemy.totalLife} debido al último ataque que le resto ${lifeSubtracted}.`);
+      console.log(`El enemigo quedo con una vida de ${Math.floor(Math.floor(enemy.life))}/${enemy.totalLife} debido al último ataque que le resto ${Math.floor(lifeSubtracted)}.`);
       
       if(enemy.life <= 0){
         break
@@ -56,10 +56,10 @@ const app = async () => {
         numberAttack++;
   
         atack = enemy.attack(warrior)
-        console.log(`El enemigo genero un ataque de ${atack}`);
+        console.log(`El enemigo genero un ataque de ${Math.floor(atack)}`);
   
         lifeSubtracted = warrior.defend(atack, enemy);
-        console.log(`Tu personaje quedo con una vida de ${Math.floor(warrior.life)}/${warrior.totalLife} debido al último ataque que le resto ${lifeSubtracted}.`);
+        console.log(`Tu personaje quedo con una vida de ${Math.floor(warrior.life)}/${warrior.totalLife} debido al último ataque que le resto ${Math.floor(lifeSubtracted)}.`);
       }
     }
     if(enemy.life <= 0){
