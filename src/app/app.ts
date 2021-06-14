@@ -1,4 +1,4 @@
-import {createEnemyBackground, promiseInput} from "../configs/promises";
+import {createEnemyBackground, promiseInput} from "./promises";
 import { Weapon } from "../objects_game/weapon/Weapon";
 import {Character} from "../objects_game/character/Character";
 
