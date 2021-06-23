@@ -1,6 +1,6 @@
 # Parcial de Programación II #
 
-### Alumnos: Conil Nicolas, Brizuela José, Catalano Nicolas ###
+### Alumnos: Conil Nicolas, Brizuela José, Catalano Nicolas,Chaves Daiana ###
 
 #### Teoria
 ##### Sistema: Video Juego
